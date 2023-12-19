@@ -1,61 +1,62 @@
 import React from 'react'
-import { BsCart3,BsGrid1X2Fill,BsFillGrid3X3GapFill,
-  BsFillArchiveFill,BsPeopleFill,BsListCheck,
-  BsMenuButtonWideFill,BsFillGearFill
+import {
+  BsCart3, BsGrid1X2Fill, BsFillGrid3X3GapFill,
+  BsFillArchiveFill, BsPeopleFill, BsListCheck,
+  BsMenuButtonWideFill, BsFillGearFill
 } from 'react-icons/bs'
 
-function Sidebar() {
+function Sidebar({ openSidebarToggle, OpenSidebar }) {
   return (
-    <aside id='sidebar'>
+    <aside id='sidebar' className={openSidebarToggle ? "sidebar-responsive": ""}>
       <div className='sidebar-title'>
         <div className='sidebar-brand'>
-          <BsCart3 className='icon_header'/> SHOP
+          <BsCart3 className='icon_header' /> SHOP
         </div>
-        <span className='icon close_icon'>X</span>
+        <span className='icon close_icon' onClick={OpenSidebar}>X</span>
       </div>
 
       <ul className='sidebar-list'>
-          <li className='sidebar-list-item'>
-              <a href=''>
-                <BsGrid1X2Fill className='icon'/>DASHBOARD
-              </a>
-          </li>
+        <li className='sidebar-list-item'>
+          <a href=''>
+            <BsGrid1X2Fill className='icon' />DASHBOARD
+          </a>
+        </li>
 
-          <li className='sidebar-list-item'>
-              <a href=''>
-                <BsFillArchiveFill className='icon'/>PRODUCTS
-              </a>
-          </li>
+        <li className='sidebar-list-item'>
+          <a href=''>
+            <BsFillArchiveFill className='icon' />PRODUCTS
+          </a>
+        </li>
 
-          <li className='sidebar-list-item'>
-              <a href=''>
-                <BsFillGrid3X3GapFill className='icon'/>CATEGORIES
-              </a>
-          </li>
+        <li className='sidebar-list-item'>
+          <a href=''>
+            <BsFillGrid3X3GapFill className='icon' />CATEGORIES
+          </a>
+        </li>
 
-          <li className='sidebar-list-item'>
-              <a href=''>
-                <BsPeopleFill className='icon'/>CUSTOMERS
-              </a>
-          </li>
+        <li className='sidebar-list-item'>
+          <a href=''>
+            <BsPeopleFill className='icon' />CUSTOMERS
+          </a>
+        </li>
 
-          <li className='sidebar-list-item'>
-              <a href=''>
-                <BsListCheck className='icon'/>INVENTORY
-              </a>
-          </li>
+        <li className='sidebar-list-item'>
+          <a href=''>
+            <BsListCheck className='icon' />INVENTORY
+          </a>
+        </li>
 
-          <li className='sidebar-list-item'>
-              <a href=''>
-                <BsMenuButtonWideFill className='icon'/>REPORTS
-              </a>
-          </li>
+        <li className='sidebar-list-item'>
+          <a href=''>
+            <BsMenuButtonWideFill className='icon' />REPORTS
+          </a>
+        </li>
 
-          <li className='sidebar-list-item'>
-              <a href=''>
-                <BsFillGearFill className='icon'/>SETTING
-              </a>
-          </li>
+        <li className='sidebar-list-item'>
+          <a href=''>
+            <BsFillGearFill className='icon' />SETTING
+          </a>
+        </li>
       </ul>
     </aside>
   )

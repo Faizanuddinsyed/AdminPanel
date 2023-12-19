@@ -1,38 +1,43 @@
-body{
-  margin:0;
+body {
+  margin: 0;
   padding: 0;
   background-color: #1d2634;
   color: #9e9ea4;
-  font-family: Montserrat , sans-serif;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.icon {
+  vertical-align: middle;
+  line-height: 1px;
+  font-size: 20px;
+}
+.icon_header {
+  vertical-align: middle;
+  line-height: 1px;
+  font-size: 26px;
+}
+.icon, .icon_header {
+  margin-right: 5px;
+}
+
+.close_icon {
+  color: red;
+  margin-left: 30px;
+  margin-top: 10px;
+  cursor: pointer;
 }
 
 .grid-container {
   display: grid;
   grid-template-columns: 260px 1fr 1fr 1fr;
   grid-template-rows: 0.2fr 3fr;
-  grid-template-areas: 
-  'sidebar header header header'
-  'sidebar main main main';
-  height:100vh;
+  grid-template-areas:
+    'sidebar header header header'
+    'sidebar main main main';
+  height: 100vh;
 }
 
-/* Header */
-.icon {
-  vertical-align: middle;
-  line-height: 1px;
-  font-size: 20px;
-}
-
-.icon_header {
-  vertical-align: middle;
-  line-height: 1px;
-  font-size: 26px;
-}
-
-.icon, .icon_header {
-  margin-right: 5px;
-}
-
+/* Header  */
 .header {
   grid-area: header;
   height: 60px;
@@ -40,17 +45,16 @@ body{
   align-items: center;
   justify-content: space-between;
   padding: 0 30px 0 30px;
-  box-shadow: 0 6px 7px -3px rgba(0,0,0,0.35);
+  box-shadow: 0 6px 7px -3px rgba(0, 0, 0, 0.35);
 }
 
-.menu-icons{
+.menu-icon {
   display: none;
 }
+/* End Header  */
 
-/* end of header */
-
-/* Sidebar */
-#sidebar{
+/* Sidebar  */
+#sidebar {
   grid-area: sidebar;
   height: 100%;
   background-color: #263043;
@@ -65,7 +69,6 @@ body{
   align-items: center;
   padding: 15px 30px 0px 30px;
   margin-bottom: 30px;
-  
 }
 
 .sidebar-title > span {
@@ -86,15 +89,14 @@ body{
 .sidebar-list-item {
   padding: 20px 20px 20px 20px;
   font-size: 18px;
-  
 }
 
 .sidebar-list-item:hover {
-  background-color: rgba(255,255,255,0.2);
+  background-color: rgba(255, 255, 255, 0.2);
   cursor: pointer;
 }
 
-.sidebar-list-item >a {
+.sidebar-list-item > a {
   text-decoration: none;
   color: #9e9ea4;
 }
@@ -102,19 +104,23 @@ body{
 .sidebar-responsive {
   display: inline !important;
   position: absolute;
-
-  /* we want the z-index of the sidebar hogher so that he 
-  charts are not showing over the sidebar on smaller screen */
+  /*
+    we want the z-index of the sidebar higher so that
+    the charts are not showing over the sidebar 
+    on small screens
+  */
   z-index: 12 !important;
 }
-/* End of Sidebar */
 
-/* Main */
+/* End Sidebar  */
+
+
+/* Main  */  
 .main-container {
   grid-area: main;
   overflow-y: auto;
   padding: 20px 20px;
-  color: rgba(255,255,255,0.95);
+  color: rgba(255, 255, 255, 0.95);
 }
 
 .main-title {
@@ -152,13 +158,14 @@ body{
 .card:nth-child(4) {
   background-color: #d50000;
 }
+
 .card-inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-.card-inner >.card-icon {
+.card-inner > .card_icon {
   font-size: 25px;
 }
 
@@ -169,7 +176,9 @@ body{
   margin-top: 60px;
   height: 300px;
 }
-/* End of Main */
+
+/* End Main  */
+
 
 /* medium screen <=992px */
 
@@ -195,6 +204,27 @@ body{
   }
 }
 
-
-
 /* end of medium screen */
+
+/* Small <= 768px */
+  
+@media screen and (max-width: 768px) {
+  .main-cards {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    margin-bottom: 0;
+  }
+
+  .charts {
+    grid-template-columns: 1fr;
+    margin-top: 30px;
+  }
+}
+
+/* Extra Small <= 576px */
+
+@media screen and (max-width: 576px) {
+  .hedaer-left {
+    display: none;
+  }
+}
